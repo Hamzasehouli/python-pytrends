@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Sehouli\Desktop\pytrends\venv"
+VIRTUAL_ENV="C:\Users\solicode\Desktop\updated-pytrends\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -1,14 +1,22 @@
 from pytrends.request import TrendReq
+
 from threading import Timer
 
 from datetime import datetime
 
 
 
+
+
 pytrends = TrendReq(hl='en-US', tz=360)
 
-kwList = ["down","is down","not working","stopped","fix","problem","does not work","doesn't work","stopped working","crashed","503","outage"]
-platfomrsList = ["facebook","instagram","whatsapp","reddit","google","discord","trello","telegram","twitter","shopify","tik tok","gmail","youtube","github","bing","stripe","paypal","ebay","udemy","cousera","edx","google maps","firebase","twitch","linkedin","netflix","disney","amazon","kik","spotify","aws","stream","facebook messenger","yahoo mail","battlefield","call of duty","snapchat","tinder","glovo","stack overflow","shein","indeed","sololearn","airbnb","zoom","clubhouse","canva","9gag","iq option","booking","expedia","binance","uber"]
+kwList = ["down","is down","not working","stopped","does not work"]
+
+platfomrsList = ["facebook","instagram","whatsapp","reddit","google","discord","trello","telegram",
+"twitter","shopify","tik tok","gmail","youtube","github","bing","stripe","paypal","ebay","udemy",
+"cousera","edx","google maps","firebase","twitch","linkedin","netflix","disney","amazon","kik","spotify","aws","stream",
+"facebook messenger","yahoo mail","battlefield","call of duty","snapchat","tinder","glovo","stack overflow","shein",
+"indeed","sololearn","airbnb","zoom","clubhouse","canva","9gag","iq option","booking","expedia","binance","uber", "gcash"]
 
 pureData =[]
 
@@ -41,7 +49,7 @@ def test():
 
   for i in range(len(queries)):
    for k in platfomrsList:
-    if(values[i]>1500 and k in queries[i]):
+    if(values[i]>10 and k in queries[i]):
      now = datetime.now()
 
      current_time = now.strftime("%H:%M:%S,%b/%y")
@@ -51,6 +59,6 @@ def test():
 
  
  if run:
-	 Timer(60, test).start()
+	 Timer(10, test).start()
 
 test()
